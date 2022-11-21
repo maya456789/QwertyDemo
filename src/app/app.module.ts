@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AlertModule } from '@coreui/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AutoFocusDirective } from './autoFocusDirective/auto-focus.directive';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AutoFocusDirective } from './autoFocusDirective/auto-focus.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
