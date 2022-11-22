@@ -1,0 +1,199 @@
+
+<c-card class="w-80">
+  <c-card-body>
+    <h5 cCardTitle>Registration Form</h5>
+    <c-row>
+      <c-col md="6" >
+        <form cForm [formGroup]="simpleForm" novalidate (ngSubmit)="onSubmit()" class="needs-validation">
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="firstName">First name</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                    id="firstName"
+                    formControlName="firstName"
+                    placeholder="First name *"
+                    autocomplete="none"
+                    required
+                    appAutoFocus
+                    [ngClass]="{ 'is-invalid': (submitted || f['firstName'].touched) && f['firstName'].invalid, 'is-valid': f['lastName'].touched && f['firstName'].valid  }" />
+              <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                <div *ngIf="f['firstName'].errors['maxlength']">Maximum character limit is 50.</div>
+              </div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="lastName">Last name</label>
+            <c-col [sm]="8">
+              <input cFormControl 
+                    id="lastName"
+                    formControlName="lastName"
+                    placeholder="Last name *"
+                    autocomplete="none"
+                    required
+                    [ngClass]="{ 'is-invalid':  (submitted || f['lastName'].touched) && f['lastName'].invalid, 'is-valid': f['lastName'].touched && f['lastName'].valid }" />
+              <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+                <div *ngIf="f['lastName'].errors['maxlength']">Maximum character limit is 50.</div>
+              </div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="email">Email</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Email *"
+                    autocomplete="email"
+                    required
+                    [ngClass]="{ 'is-invalid': (submitted || f['email'].touched) && f['email'].invalid, 'is-valid': f['email'].touched && f['email'].valid }" />
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['pattern']">{{formErrors.email.email}}</div>
+              </div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="username">Phone no</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                    id="phoneNo"
+                    formControlName="phoneNo"
+                    placeholder="Phone Number"
+                    autocomplete="none"
+                    required
+                    [ngClass]="{ 'is-invalid': (submitted || f['phoneNo'].touched) && f['phoneNo'].errors, 'is-valid': f['phoneNo'].touched && !f['phoneNo'].errors }" />
+              <div *ngIf="submitted && f['phoneNo'].errors " class="invalid-feedback">
+                <div *ngIf="f['phoneNo'].errors['required']">Phone number is required</div>
+                <div *ngIf="f['phoneNo'].errors['minlength']">Phone number should be 10 digit.</div>
+                <div *ngIf="f['phoneNo'].errors['maxlength']">Phone number should not be more than 10. </div>
+                <div *ngIf="f['phoneNo'].errors['pattern']">Only digits are allowed. </div>
+              </div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="username">Organization name</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                    id="orgName"
+                    formControlName="orgName"
+                    placeholder="Organization Name"
+                    autocomplete="none"
+                    required
+                    [ngClass]="{ 'is-invalid': (submitted || f['orgName'].touched) && f['orgName'].errors, 'is-valid': f['orgName'].touched && !f['orgName'].errors }" />
+              <div *ngIf="submitted && f['orgName'].errors " class="invalid-feedback">
+                <div *ngIf="f['orgName'].errors['required']">Username is required</div>
+                <div *ngIf="f['orgName'].errors['maxlength']">Maximum charactor length is 1000.</div>
+                
+              </div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="orgadd">Organization address</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                    id="orgAddress"
+                    formControlName="orgAddress"
+                    placeholder="Organization Address"
+                    autocomplete="none"
+                    required
+                    [ngClass]="{ 'is-invalid': (submitted || f['orgAddress'].touched) && f['orgAddress'].errors, 'is-valid': f['orgAddress'].touched && !f['orgAddress'].errors }" />
+              <div *ngIf="submitted && f['orgAddress'].errors " class="invalid-feedback">
+                <div *ngIf="f['orgAddress'].errors['required']">Username is required</div>
+                <div *ngIf="f['orgAddress'].errors['maxlength']">Maximum charactor length is 1000.</div>
+                
+              </div>
+            </c-col>
+          </c-row>
+          
+          
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="password">Password</label>
+            <c-col [sm]="8">
+              <input cFormControl
+                     id="password"
+                     type="password"
+                     formControlName="password"
+                     placeholder="Password"
+                     autocomplete="new-password"
+                     required
+                     [ngClass]="{ 'is-invalid': (submitted || f['password'].touched) && f['password'].invalid, 'is-valid': f['password'].touched && f['password'].valid }" />
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']">Password Minlength is 6 character</div>
+                <div *ngIf="f['password'].errors['maxlength']">Maximum length should be 16 charactor.</div>
+                <div *ngIf="f['password'].errors['pattern']">Invalid password.</div>
+              </div>
+            </c-col>
+          </c-row>
+          
+          <c-row class="mb-1">
+            <label cCol [sm]="4" cLabel="col" for="username">Organization establish date</label>
+            <c-col [sm]="8">
+              <input
+              cFormControl
+              placeholder="yyyy-mm-dd"
+               formControlName="orgRegDate"
+              
+               ngbDatepicker
+             #d="ngbDatepicker"
+             [ngClass]="{ 'is-invalid': (submitted || f['orgRegDate'].touched) && f['orgRegDate'].invalid, 'is-valid': f['orgRegDate'].touched && f['orgRegDate'].valid }" />
+        
+        <button cButton color="success" variant="outline"  (click)="d.toggle()" type="button">Add Date</button> 
+        <div *ngIf="submitted && f['orgRegDate'].errors" class="invalid-feedback">
+          <div *ngIf="f['orgRegDate'].errors['required']">Password is required</div>
+        </div> 
+            </c-col>
+          </c-row>
+          <c-row class="mb-1">
+            <c-col>
+              <c-form-check>
+                <input cFormCheckInput
+                      type="checkbox"
+                      id="accept"
+                      formControlName="accept"
+                      required
+                      [ngClass]="{ 'is-invalid': submitted && f['accept'].invalid, 'is-valid': f['accept'].valid }" />
+                <label cFormCheckLabel custom for="accept">I accept the terms of use</label>
+                <c-form-feedback *ngIf="submitted && f['accept'].invalid" [valid]="false">
+                  <div *ngIf="f['accept'].errors">You have to accept our Terms and Conditions</div>
+                </c-form-feedback>
+              </c-form-check>
+            </c-col>
+          </c-row>
+          <hr>
+          <c-button-group>
+            <button cButton color="primary" type="submit" [disabled]="simpleForm.pristine || simpleForm.invalid" [tabindex]="'0'">Submit</button>
+            <button cButton color="success" [disabled]="simpleForm.valid" (click)="onValidate()" [tabindex]="'0'">Validate</button>
+            <button cButton color="danger" type="reset" (click)="onReset()" [tabindex]="'0'">Reset</button>
+          </c-button-group>
+        </form>
+      </c-col>
+    <!-- <c-col md="6">
+        <c-card class="bg-dark" [ngClass]="{ 'bg-info' : simpleForm.valid }">
+          <c-card-body>
+            <pre class="text-white">Value: <code>{{ simpleForm.value | json }}</code></pre>
+            <pre class="text-white">Model: {{ model | json }}</pre>
+            <ul>
+              <li>
+                Status: {{ simpleForm.status }}
+              </li>
+              <li>
+                Errors: {{ simpleForm.errors | json }}
+              </li>
+              <li>
+                Valid: {{ simpleForm.valid }}
+              </li>
+              <li>
+                Pristine: {{ simpleForm.pristine }}
+              </li>
+              <li></li>
+            </ul>
+          </c-card-body>
+        </c-card>
+       </c-col>--> 
+    </c-row>
+  </c-card-body>
+</c-card>
