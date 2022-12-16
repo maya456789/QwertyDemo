@@ -68,6 +68,7 @@ export class RegisterPageComponent {
     this.simpleForm.reset();
   }
 
+  
   onValidate() {
     this.submitted = true;
    // console.log('Form validity:',this.simpleForm);
@@ -82,6 +83,7 @@ export class RegisterPageComponent {
       // TODO: Submit form value
       console.warn(this.simpleForm.value);
       alert('SUCCESS!');
+      this.onReset();
     }
   }
 

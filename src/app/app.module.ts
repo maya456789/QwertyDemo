@@ -11,31 +11,59 @@ import { RegisterPageComponent } from './register/register-page/register-page.co
     
   
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DefaultComponent } from './adminPages/default/default.component';
+import { SpaSidebarComponent } from './spa-sidebar/spa-sidebar.component';
+import { LoginComponent } from './login/login.component';
+import { CoreuiSidebarComponent } from './coreui-sidebar/coreui-sidebar.component';
+import { OffcanvasModule } from '@coreui/angular';
+import { NavModule } from '@coreui/angular';
+import { NavbarModule } from '@coreui/angular';
+import { DropdownModule } from '@coreui/angular';
+import { SignupComponent } from './signup/signup.component';
+import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SidebarModule } from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { IraTestComponent } from './ira-test/ira-test.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AutoFocusDirective,
-    RegisterPageComponent
+    RegisterPageComponent,
+    DefaultComponent,
+    SpaSidebarComponent,
+    LoginComponent,
+    CoreuiSidebarComponent,
+    SignupComponent,
+    IraTestComponent
   ],
   imports: [
     
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule, 
+    HttpClientModule,
      NgbModule,
     ButtonModule,
     CardModule,
     FormModule,
     GridModule,
     ButtonGroupModule,
+    DropdownModule,
+    IconModule, 
+    NavModule,
+    OffcanvasModule,
+    SidebarModule,
+    NavbarModule,
     
     ReactiveFormsModule,
     AppRoutingModule,
     AlertModule,
   ],
-  providers: [],
+  providers: [AuthService,IconSetService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

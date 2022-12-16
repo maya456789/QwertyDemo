@@ -1,0 +1,74 @@
+
+
+<c-navbar colorScheme="light" class="bg-light">
+    <c-container fluid>
+      <button [cNavbarToggler] cOffcanvasToggle="OffcanvasSidebar"></button>
+      <c-offcanvas
+        placement="start"
+        [scroll]="true"
+        id="OffcanvasSidebar"
+        #offcanvasScroll
+      >
+        <c-offcanvas-header>
+          <h5 cOffcanvasTitle>Offcanvas</h5>
+          <button
+            cButtonClose
+            class="text-reset"
+            cOffcanvasToggle="OffcanvasSidebar"
+            aria-label="Close"
+          ></button>
+        </c-offcanvas-header>
+        <c-offcanvas-body>
+          <c-navbar-nav>
+            <c-nav-item>
+              <a cNavLink >Home</a>
+            </c-nav-item>
+            <c-nav-item>
+              <a cNavLink routerLink="regPage">Link</a>
+            </c-nav-item>
+            <c-dropdown variant="nav-item" [popper]="false">
+              <a cDropdownToggle cNavLink>Dropdown</a>
+              <ul cDropdownMenu>
+                <li><button cDropdownItem>Action</button></li>
+                <li><button cDropdownItem>Another action</button></li>
+                <li><button cDropdownItem>Something else here</button></li>
+              </ul>
+            </c-dropdown>
+            <c-nav-item>
+              <a cNavLink disabled>Disabled</a>
+            </c-nav-item>
+          </c-navbar-nav>
+          <form cForm class="d-flex" role="search">
+            <input cFormControl type="search" placeholder="Search" aria-label="Search" class="me-2">
+            <button cButton color="success" variant="outline">Search</button>
+          </form>
+        </c-offcanvas-body>
+      </c-offcanvas>
+    </c-container>
+  </c-navbar>
+
+  <router-outlet> </router-outlet>
+  <p>
+    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+    helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+    8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+</p>
+<p>
+    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+    helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+    8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+</p>
+<p>
+    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+    helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+    8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+</p>

@@ -1,0 +1,77 @@
+
+<h2>Q 1] -></h2>
+<div class="container">
+  <div class="card w-50"> 
+    <form [formGroup]="Fdata"> 
+        <div class="row">
+       <div class="col">
+        <input type="text" class="form-control" placeholder="addIndex"  formControlName="indexName">&nbsp;<br>
+        
+       </div>
+       <div class="col">
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary">Add</button>
+       </div>
+       <div *ngIf="isSub">
+         {{indVal}}
+       </div>
+  </div>
+   </form>
+ 
+</div> 
+</div>
+
+<h2>Q 2]</h2>
+
+<div class="container-fluid pt-2" style="margin-bottom: 250px">
+
+    <div class="card border-secondary">
+        <div class="card-body">
+          <h4 class="card-title">Component X</h4>
+          <form [formGroup]="invoiceFormData" >
+         
+          <div class="card border-secondary mt-2 mb-5">
+            <div class="card-body">
+              <h4 class="card-title d-flex justify-content-between">Items Details </h4>
+    
+              <button type="button" class="btn btn-primary" (click)="compX()">Add</button>
+            
+               
+             <div formArrayName="addInvoice" *ngIf="isSubmitted">
+               
+              <div class="row" *ngFor="let row of f['controls']; let i = index" [formGroupName]="i">
+          
+                <div class="col-md-3">
+                  <label>Add Name</label>
+                  <input type="text" class="form-control"  formControlName="itemName"   >
+                
+                
+                </div>
+               
+                <div class="col-md-3">
+                  <label>Action</label><br>
+                  <button type="button" class="btn btn-primary" >Save</button>
+    
+                </div>
+                <div class="col-md-2">
+                  <button type="button" (click)="addForm()" class="btn btn-primary" *ngIf="i===0">+</button>
+                  <button (click)="removeForm(i)" mat-raised-button type="button" class="btn btn-danger" *ngIf="i!=0">-</button>
+                </div>
+                </div>
+    
+    
+            
+    
+              </div>
+    
+    
+              
+              
+              
+              </div>
+    
+            </div>
+
+          </form>
+        </div>
+      </div>
+</div>

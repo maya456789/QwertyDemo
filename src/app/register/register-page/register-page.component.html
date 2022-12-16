@@ -84,7 +84,7 @@
                     required
                     [ngClass]="{ 'is-invalid': (submitted || f['orgName'].touched) && f['orgName'].errors, 'is-valid': f['orgName'].touched && !f['orgName'].errors }" />
               <div *ngIf="submitted && f['orgName'].errors " class="invalid-feedback">
-                <div *ngIf="f['orgName'].errors['required']">Username is required</div>
+                <div *ngIf="f['orgName'].errors['required']">Organization name is required</div>
                 <div *ngIf="f['orgName'].errors['maxlength']">Maximum charactor length is 1000.</div>
                 
               </div>
@@ -101,7 +101,7 @@
                     required
                     [ngClass]="{ 'is-invalid': (submitted || f['orgAddress'].touched) && f['orgAddress'].errors, 'is-valid': f['orgAddress'].touched && !f['orgAddress'].errors }" />
               <div *ngIf="submitted && f['orgAddress'].errors " class="invalid-feedback">
-                <div *ngIf="f['orgAddress'].errors['required']">Username is required</div>
+                <div *ngIf="f['orgAddress'].errors['required']">Organization address is required</div>
                 <div *ngIf="f['orgAddress'].errors['maxlength']">Maximum charactor length is 1000.</div>
                 
               </div>
@@ -165,7 +165,7 @@
                 <c-form-feedback *ngIf="submitted && f['accept'].invalid" [valid]="false">
                   <div *ngIf="f['accept'].errors">You have to accept our Terms and Conditions</div>
                 </c-form-feedback>
-              </c-form-check>
+              </c-form-check> 
             </c-col>
           </c-row>
           <hr>
@@ -173,6 +173,7 @@
             <button cButton color="primary" type="submit" [disabled]="simpleForm.pristine || simpleForm.invalid" [tabindex]="'0'">Submit</button>
             <button cButton color="success" [disabled]="simpleForm.valid" (click)="onValidate()" [tabindex]="'0'">Validate</button>
             <button cButton color="danger" type="reset" (click)="onReset()" [tabindex]="'0'">Reset</button>
+            <button cButton color="danger" type="button" routerLink="/reg" [tabindex]="'0'">Click</button>
           </c-button-group>
         </form>
       </c-col>
